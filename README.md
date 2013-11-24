@@ -1,4 +1,1 @@
-seq-releases
-============
-
-Releases and issue tracker for the Seq event server
+Welcome to the issue tracker for the [Seq](http://getseq.net) event server.
