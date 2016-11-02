@@ -6,6 +6,12 @@ Welcome to the issue tracker for [Seq](https://getseq.net)! You can **[search ex
 
 Seq is a log server designed to speed up diagnostics in complex, asynchronous and distrubuted applications. It has a strong focus on _structured logging_, the idea that log events should carry important information in first-class properties.
 
+### Bugs and feature requests
+
+If you think you may have found a bug in Seq, this is the place to report it.
+
+Please also feel free to suggest features here. We will endeavour to consider and respond to every request we receieve. To keep the volume of items in this tracker manageable, feature requests that we're planning to work on in the very near future are moved to our [UserVoice suggestions](https://seq.uservoice.com).
+
 ### Documentation and support
 
 The Seq [online documentation](http://docs.getseq.net) has information on all aspects of Seq - it's a great place to start if you are configuring or using Seq for the first time.
