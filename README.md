@@ -8,7 +8,7 @@ Seq is a log server designed to speed up diagnostics in complex, asynchronous an
 
 ### Bugs and feature requests
 
-If you think you may have found a bug in Seq, this is the place to report it. You can **[search existing issues](https://github.com/datalust/seq-releases/issues)** or **[raise a new issue](https://github.com/datalust/seq-releases/issues/new)** here.
+If you think you may have found a bug in Seq, this is the place to report it. You can **[search existing issues](https://github.com/datalust/seq-tickets/issues)** or **[raise a new issue](https://github.com/datalust/seq-tickets/issues/new)** here.
 
 Please also feel free to suggest features here. We will endeavour to consider and respond to every request we receieve.
 
