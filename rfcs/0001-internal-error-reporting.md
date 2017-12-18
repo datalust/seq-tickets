@@ -63,7 +63,7 @@ Exception: System.NullReferenceException: Object reference not set to an instanc
 * **Event** - the _template_ describing the error condition, without any parameters substituted
 * **Exception** - the full exception message and stack trace, or null if no exception is associated with the event
 
-Event-specific properties like `RequestUrl` and `ErrorToken` will not be added to the report; this is a trade-off, we may wish to mark particular properties as 'safe' in a future iteration of the feature, but for now we can do without this level of detail.
+Values of event-specific properties like `RequestUrl` and `ErrorToken` will not be added to the report; this is a trade-off, we may wish to mark particular properties as 'safe' in a future iteration of the feature, but for now we can do without this level of detail. (It may be desirable to attach `null` placeholder values for event-specific properties, so that the event's message template can be considered valid.)
 
 Exception messages are the least-controllable data item here; currently, Seq itself avoids including senstive information in exception messages. By their nature, however, exceptions are unpredictable. Initial implementation of the feature will need to include a review current exception messages, and we will futher need to monitor the content of reported exceptions to limit the amount of user/implementation-specific data that is collected.
 
