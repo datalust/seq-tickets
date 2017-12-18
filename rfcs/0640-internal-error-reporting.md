@@ -22,7 +22,7 @@ The proposed method of error reporting is to enable a remote (HTTPS) log server 
 
 By default, no error details will be reported. Seq currently (4.1.x) maintains a strict policy of making no external network calls without an explicit opt-in by an administrator (e.g. for version update checks). Clear and explicit opt-in is a cornerstone of Seq's respect for user privacy and security.
 
-To opt-in, an administrative Seq user will open the _Settings_ > _System_ page and navigate to the _Telemetry_ heading. Initially, only a single, unchecked box will be presented, with the title:
+To opt-in, an administrative Seq user will open the _Settings_ > _Diagnostics_ page and navigate to the _Telemetry_ heading. Initially, only a single, unchecked box will be presented, with the title:
 
 > **Enable error reporting**
 
@@ -115,7 +115,6 @@ Collecting any end-user data introduces privacy and security concerns. The featu
 ## Alternatives
 
 * Reports could be generated and sent from a separate "monitor" process, particularly so that non-.NET exceptions can be collected and reported; the added implementation cost rules this out in the short-term, but it may be useful as a future enhancement
-* Crash telemetry settings could be enabled under _Settings_ > _Diagnostics_; this would be a more logical grouping, but the layout of the _Diagnostics_ page does not incorporate form-style fields
 * Crash reports could be manually audited by an administrator before being sent; this would create an additional burden on the users' time that may defeat the purpose of the feature, but could also be an option in the future
 * A whitelist could be used, instead of a blacklist, for selecting which components can report crashes; this would be unwieldy, as the number of components we would wish to exclude would be very small
 
