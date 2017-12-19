@@ -52,7 +52,7 @@ The setting label and help text will be:
 > **Stream incoming events**
 > App instances can be triggered by alerts set on dashboards, and events can be sent manually to any app from the drop-down menu in the event details. Check this box to send events as they arrive.
 
-Initially, the checkbox is unchecked, so the app instance will have parameterization enabled. If the user checks the checkbox, the option to mark settings as invocatoin parameters (further down the screen) will be greyed out and show an explanatory tool-tip _App instances that receive events directly from the stream cannot be parameterized_.
+Initially, the checkbox is unchecked, so the app instance will have parameterization enabled. If the user checks the checkbox, the option to mark settings as invocation parameters (further down the screen) will be greyed out and show an explanatory tool-tip _App instances that receive events directly from the stream cannot be parameterized_.
 
 Under the _Settings_ heading, each setting will gain an additional icon-style button to the right of its input control. Pressing this button will toggle the setting between being a regular setting, and being an input parameter.
 
