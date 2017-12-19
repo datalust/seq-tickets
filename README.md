@@ -28,6 +28,6 @@ We maintain [feature milestones](https://github.com/datalust/seq-tickets/milesto
 
 For Seq 5.0 onwards, we have adopted an RFC ('request for comment') process so that design discussions for larger features can happen in the open, with full community involvement.
 
-Accepted RFCs are recorded under `/rfcs` in this repository, while new proposals are [discussed via pull requests](https://github.com/datalust/seq-tickets/pulls).
+Accepted RFCs are recorded under [`/rfcs`](https://github.com/datalust/seq-tickets/tree/master/rfcs) in this repository, while new proposals are [discussed via pull requests](https://github.com/datalust/seq-tickets/pulls).
 
 _To propose a feature, please create an issue to discuss it with the Seq development team. We will create RFCs and PRs where necessary._
