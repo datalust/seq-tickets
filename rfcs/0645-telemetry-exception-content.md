@@ -49,7 +49,7 @@ System.InvalidOperationException: An er... ---> System.Net.WebException: The r..
    at NuGet.RedirectedHttpClient.EnsureClient()
 ```
 
-_Why five characters? It's unlikely any exception-specific information will be present in the first few characters of the exception message string, and even if usage-specific data are present, five characters is unlikley to represent anything substantial. It may, however, be enough for us to narrrow down the cause of an exception with a general type.
+_Why five characters? It's unlikely any exception-specific information will be present in the first few characters of the exception message string, and even if usage-specific data are present, five characters is unlikley to represent anything substantial. It may, however, be enough for us to narrrow down the cause of an exception with a general type._
 
 ### Whitelisted information
 
