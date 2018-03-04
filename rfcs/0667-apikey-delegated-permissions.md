@@ -1,6 +1,6 @@
 # API key delegated permissions
 
-Instead of maintaining separate principal types and access rules for regular users vs API keys, switch to the model whereby a user creates API keys and delegates one or more of the user's permissions to it.
+Unify access rules between regular users and API keys by switching to a model where API keys are delegated a subset of their owning user's permissions.
 
 ## Motivation
 
@@ -29,7 +29,7 @@ The summaries in this section highlight how the major use cases for API keys wil
 
 It's anticipated that API keys for application log ingestion will continue to be created and maintained by a system administrator, as shared (non-personal) API keys. This will prevent interruption of application logging when users come and go.
 
-A user may still create a personal API key and use it to ingest log events if desired - this essentially provides "self-service" API key creation. Using shared keys for ingesion is encouraged by recommendation only.
+A user may still create a personal API key and use it to ingest log events if they wish - this essentially provides "self-service" API key creation. Using shared keys for ingestion will be encouraged but not required.
 
 API keys created for ingestion purposes will have the `Ingest` permission assigned: this will be selected by default when creating a new shared API key, as it is by far the most common use case.
 
@@ -45,7 +45,7 @@ API keys can be used for scripted setup in essentially the same manner as for re
 
 #### Controlling ingestion rate per API key
 
-When an administrative user browses _Settings > API keys_, by default only shared keys will be shown. By selectin the new _Show personal API keys_ checkbox, the details of API keys owned by all users will be included, showing the ingestion rate for personal as well as shared keys.
+When an administrative user browses _Settings > API keys_, by default only shared keys will be shown. By selecting the new _Show personal API keys_ checkbox, the details of API keys owned by all users will be included, showing the ingestion rate for personal as well as shared keys.
 
 Note that this will not reveal the tokens associated with personal API keys, as these will have been hashed and therefore will not be retrievable from storage.
 
