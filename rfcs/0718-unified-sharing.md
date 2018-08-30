@@ -34,10 +34,10 @@ The following guiding principles have been established:
 Applying these, the model proposed by this RFC is:
 
  * All items can be marked with an "owner", in which case they will be regarded as "personal"
- * All newly-create items will initially be owned by their creator (except in API-driven/automation scenarios)
+ * All newly-created items will initially be owned by their creator (except in API-driven/automation scenarios)
  * Any user can make a "personal" item into a "shared" item
  * Administrative users can mark shared items as "restricted", in which case they can only be modified by administrative users
- * Any user can edit, remove, or make personal any unrestricted "shared" item
+ * Any user can edit, delete, or un-share (convert to personal) any unrestricted "shared" item
  * Users will by default see all of their personal items, and all shared items, in each category
  * Shared items can be "hidden", which corresponds with the current "Remove" function on signals
  * Personal items can only be deleted, not hidden
