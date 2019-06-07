@@ -1,6 +1,6 @@
-# Seq [![Join the chat at https://gitter.im/datalust/seq](https://img.shields.io/gitter/room/datalust/seq.svg)](https://gitter.im/datalust/seq) [![Read Documentation](https://img.shields.io/badge/docs-online-blue.svg)](https://docs.getseq.net)
+# Seq [![Join the chat at https://gitter.im/datalust/seq](https://img.shields.io/gitter/room/datalust/seq.svg)](https://gitter.im/datalust/seq) [![Read Documentation](https://img.shields.io/badge/docs-online-blue.svg)](https://docs.datalust.co)
 
-Welcome to the hub for issues, design discussions and the feature roadmap for [Seq](https://getseq.net).
+Welcome to the hub for issues, design discussions and the feature roadmap for [Seq](https://datalust.co/seq).
 
 ### What is Seq?
 
@@ -18,7 +18,7 @@ The Seq [online documentation](http://docs.getseq.net) has information on all as
 
 If you need help with [Serilog.Sinks.Seq](https://github.com/serilog/serilog-sinks-seq), the [Troubleshooting section](https://github.com/serilog/serilog-sinks-seq#troubleshooting) of the sink documentation has some useful steps for tracking down common issues.
 
-For more information or help with Seq, please feel free to visit our [support forum](https://docs.getseq.net/discuss) or email **support@getseq.net**.
+For more information or help with Seq, please feel free to visit our [support forum](https://docs.datalust.co/discuss) or email **support@getseq.net**.
 
 ### Feature roadmap
 
