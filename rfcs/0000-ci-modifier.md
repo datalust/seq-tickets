@@ -112,10 +112,6 @@ will perform a case-sensitive grouping, because `Substring()` is not case-modifi
 
 In future, operators may exist that are both case-modifiable and return a string. In those cases, parentheses would be needed in order to activate the grouped `ci` form.
 
-### Case-sensitive aggregation
-
-The `distinct()` and `count(distinct())` aggregates may support `ci` in the future, but this is considered out-of-scope for the first iteration of this feature.
-
 ### Breaking change in `like` evaluation
 
 The `like` operator, previously case-insensitive, will become case-sensitive with this change. Existing data will need to be automatically migrated to preserve semantics.
@@ -132,6 +128,18 @@ Text fragments on their own are Boolean, while in operand position in filters th
 
 Narrowing the role of text fragments to standalone Boolean conditions improves our chances of finding a way to incorporate them cleanly into the SQL syntax, (for example, as an illustration only, using a mini-language within some kind of delimiters like `where text("x" and "y")`).
 
+## Future directions
+
+### Case-insensitive aggregation
+
+The `distinct()` and `count(distinct())` aggregates may support `ci` in the future, but this is considered out-of-scope for the first iteration of this feature.
+
+### Case-insensitive property access
+
+At least one request has been made for a case-insensitive way to access properties on events, e.g. `userId` vs `UserId`. The `@Properties['userid'] ci` option was considered as part of this feature, but it would cause confusing parses of `'Foo' = @Properties['some name'] ci` (intended `ci` comparison, but actually `ci` accessor), and `group by @Properties['some name'] ci` (`ci` accessor instead of `ci` grouping).
+
+Allowing `ci` to be applied to a helper function such as `Item(@Properties, 'userid') ci` would provide this without the drawbacks of `ci` indexers.
+
 ## Drawbacks
 
 Edge cases and breaking changes discussed above.
@@ -147,4 +155,6 @@ The primary alternatives to this feature are:
 
 ## References
 
-&mdash;
+ * https://github.com/datalust/seq-tickets/issues/687
+ * https://github.com/datalust/seq-tickets/issues/894
+
