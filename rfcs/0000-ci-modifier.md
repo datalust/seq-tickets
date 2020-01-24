@@ -143,6 +143,7 @@ The primary alternatives to this feature are:
 1. Rely on `ToLower()` to emulate case-insensitive comparisons, e.g. `ToLower(A) = 'foo'` or `group by ToLower(A)`. This will be supported through the introduction of `ToLower()` anyway, but is unappealing for reasons mentioned in _Motivation_ above.
 2. (In addition to 1.) add `EqualsIgnoreCase()` and similar functions to the language; this does not cover grouping, and is rather verbose.
 3. Extend use of `"text fragments"` and embed these further in the SQL language, for example `group by ci(A)` would dynamically construct a case-insensitive text fragment from `A`, as if a literal double-quoted string were used in place of `A`. Drawbacks mentioned in _Motivation_.
+4. Prefix expression-level `ci` with suffix structural `ci`, e.g. `ci A = B` and `group by A ci` can be combined into the unambiguous (but ugly) `group by ci A = B ci`. The edge case is removed, but at the expense of ergonomics. (Function-call `ci()` in expressions is a variant of this that was also considered).
 
 ## References
 
