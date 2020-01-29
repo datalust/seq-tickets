@@ -61,7 +61,7 @@ The `ci` suffix modifies operators, rather than operands, and can be applied to 
 
 ### Case-insensitive expressions
 
-The `ci` modifier is accepted following the right-hand operand of:
+The `ci` modifier is accepted following the right-hand operand of any comparison or function call, including:
 
  - infix `=`, `<>`, `like`, `in`
  - funtion-call `Equal()`, `NotEqual()`, `StartsWith()`, `EndsWith()`, `Contains()`, `IndexOf()`, `LastIndexOf()`, `ElementAt()`
