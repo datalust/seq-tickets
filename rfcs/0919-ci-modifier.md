@@ -64,7 +64,7 @@ The `ci` suffix modifies operators, rather than operands, and can be applied to 
 The `ci` modifier is accepted following the right-hand operand of:
 
  - infix `=`, `<>`, `like`, `in`
- - funtion-call `Equal()`, `NotEqual()`, `StartsWith()`, `EndsWith()`, `Contains()`, `IndexOf()`, `LastIndexOf()`
+ - funtion-call `Equal()`, `NotEqual()`, `StartsWith()`, `EndsWith()`, `Contains()`, `IndexOf()`, `LastIndexOf()`, `ElementAt()`
 
 It binds along with the operator, so precendence works in the normal manner. In the following example, `C = D` is case-insensitive:
 
@@ -84,6 +84,16 @@ group by Product ci, Store
 
 When specified for an ordering, the modifier must precede the direction (when present):
 
+### Case-insensitive aggregation
+
+The `distinct()` and `count(distinct())` aggregates can support `ci`. While this produces unattractive mixed-case output from `distinct()`, supporting `ci` in a universal fashion is advantageous enough to justify adding this feature.
+
+### Case-insensitive property access
+
+At least one request has been made for a case-insensitive way to access properties on events, e.g. `userId` vs `UserId`. The `@Properties['userid'] ci` option was considered as part of this feature, but it would cause confusing parses of `'Foo' = @Properties['some name'] ci` (intended `ci` comparison, but actually `ci` accessor), and `group by @Properties['some name'] ci` (`ci` accessor instead of `ci` grouping).
+
+Instead, `ci` can be applied to a helper function `ElementAt(@Properties, 'userid') ci` to provide this without the drawbacks of `ci` indexers. `ElementAt()` will support all structured objects, not only `@Properties`.
+
 ```
 select Name
 from stream
@@ -97,10 +107,10 @@ There is a syntactic edge case:
 ```
 select count(*)
 from stream
-group by Application = 'test' ci
+group by Application ci
 ```
 
-will perform a case-insensitive comparison, because the `=` operator supports `ci`, while:
+will perform a case-insensitive grouping, because the no comparison is present to consume the `ci`, while:
 
 ```
 select count(*)
@@ -108,9 +118,13 @@ from stream
 group by Substring(A, 0, 3) ci
 ```
 
-will perform a case-sensitive grouping, because `Substring()` is not case-modifiable. The corner case is unpleasant because it makes the grammar dependent on the specific operators and functions, but in all current cases the parse will be the "intended" one.
+will fail because `ci` applies to the function call. The usual strategy of "add parens until it works" applies here:
 
-In future, operators may exist that are both case-modifiable and return a string. In those cases, parentheses would be needed in order to activate the grouped `ci` form.
+```
+select count(*)
+from stream
+group by (Substring(A, 0, 3)) ci
+```
 
 ### Breaking change in `like` evaluation
 
@@ -130,15 +144,11 @@ Narrowing the role of text fragments to standalone Boolean conditions improves o
 
 ## Future directions
 
-### Case-insensitive aggregation
+### Ordering comparison of string values
 
-The `distinct()` and `count(distinct())` aggregates may support `ci` in the future, but this is considered out-of-scope for the first iteration of this feature.
+Currently the less-than/greater-than operators do not support string values, but should they do so in the future, they can also support the `ci` modifier.
 
-### Case-insensitive property access
-
-At least one request has been made for a case-insensitive way to access properties on events, e.g. `userId` vs `UserId`. The `@Properties['userid'] ci` option was considered as part of this feature, but it would cause confusing parses of `'Foo' = @Properties['some name'] ci` (intended `ci` comparison, but actually `ci` accessor), and `group by @Properties['some name'] ci` (`ci` accessor instead of `ci` grouping).
-
-Allowing `ci` to be applied to a helper function such as `Item(@Properties, 'userid') ci` would provide this without the drawbacks of `ci` indexers.
+Applying `ci` to `<`, `<=`, `>`, or `>=` will be a hard error, ensuring the syntax can be supported in the future without breaking changes.
 
 ## Drawbacks
 
