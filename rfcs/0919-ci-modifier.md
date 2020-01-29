@@ -84,6 +84,12 @@ group by Product ci, Store
 
 When specified for an ordering, the modifier must precede the direction (when present):
 
+```
+select Name
+from stream
+order by Name ci desc
+```
+
 ### Case-insensitive aggregation
 
 The `distinct()` and `count(distinct())` aggregates can support `ci`. While this produces unattractive mixed-case output from `distinct()`, supporting `ci` in a universal fashion is advantageous enough to justify adding this feature.
@@ -93,12 +99,6 @@ The `distinct()` and `count(distinct())` aggregates can support `ci`. While this
 At least one request has been made for a case-insensitive way to access properties on events, e.g. `userId` vs `UserId`. The `@Properties['userid'] ci` option was considered as part of this feature, but it would cause confusing parses of `'Foo' = @Properties['some name'] ci` (intended `ci` comparison, but actually `ci` accessor), and `group by @Properties['some name'] ci` (`ci` accessor instead of `ci` grouping).
 
 Instead, `ci` can be applied to a helper function `ElementAt(@Properties, 'userid') ci` to provide this without the drawbacks of `ci` indexers. `ElementAt()` will support all structured objects, not only `@Properties`.
-
-```
-select Name
-from stream
-order by Name ci desc
-```
 
 #### Edge-case
 
