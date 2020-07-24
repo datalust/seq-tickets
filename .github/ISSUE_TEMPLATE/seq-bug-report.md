@@ -25,7 +25,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Environment (please complete the following information):**
  - OS: [e.g. Windows, Linux, macOS]
- - Browser [e.g. chrome, safari]
+ - Browser [e.g. Chrome, Safari, Firefox, Edge]
  - Seq Version [e.g. 5.1.xxxx, or 2020.1.xxxx]
  - Using Docker? Yes / No
 
