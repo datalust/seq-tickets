@@ -15,4 +15,4 @@ Please include the following information, if applicable, so that we can better a
  - Seq Version [e.g. 5.1.xxxx, or 2020.1.xxxx]
  - Using Docker? Yes / No
 
-You can also see if your question has been answered on https://docs.datalust.co/discuss
+You can also see if your question has been answered on https://docs.datalust.co/discuss or https://stackoverflow.com/questions/tagged/seq-logging.
