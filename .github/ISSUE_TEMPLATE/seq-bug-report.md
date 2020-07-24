@@ -2,7 +2,7 @@
 name: Seq Bug Report
 about: Help us quickly find and fix bugs for you
 title: ''
-labels: ''
+labels: bug
 assignees: ''
 
 ---
