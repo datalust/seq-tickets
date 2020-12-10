@@ -18,7 +18,7 @@ The Seq [online documentation](http://docs.getseq.net) has information on all as
 
 If you need help with [Serilog.Sinks.Seq](https://github.com/serilog/serilog-sinks-seq), the [Troubleshooting section](https://github.com/serilog/serilog-sinks-seq#troubleshooting) of the sink documentation has some useful steps for tracking down common issues.
 
-For more information or help with Seq, please feel free to visit our [support forum](https://docs.datalust.co/discuss) or email **support@datalust.co**.
+For more information or help with Seq, please feel free to visit our [discussion forum](https://github.com/datalust/seq-tickets/discussions) or email **support@datalust.co**.
 
 ### Feature roadmap
 
