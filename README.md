@@ -14,7 +14,7 @@ Please also feel free to suggest features here. We will endeavor to consider and
 
 ### Documentation and support
 
-The Seq [online documentation](http://docs.getseq.net) has information on all aspects of Seq - it's a great place to start if you are configuring or using Seq for the first time.
+The Seq [online documentation](http://docs.datalust.co) has information on all aspects of Seq - it's a great place to start if you are configuring or using Seq for the first time.
 
 If you need help with [Serilog.Sinks.Seq](https://github.com/serilog/serilog-sinks-seq), the [Troubleshooting section](https://github.com/serilog/serilog-sinks-seq#troubleshooting) of the sink documentation has some useful steps for tracking down common issues.
 
