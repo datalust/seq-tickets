@@ -1,6 +1,6 @@
 ---
 name: Seq General Questions and Help
-about: General questions about performance, setup, etc. are welcome! Please [visit the Discussions tab](https://github.com/datalust/seq-tickets/discussions) and start a thread over there.
+about: General questions about performance, setup, etc. are welcome! Please visit the Discussions tab and start a thread over there.
 title: ''
 labels: ''
 assignees: ''
