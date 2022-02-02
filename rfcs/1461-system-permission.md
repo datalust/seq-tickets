@@ -321,8 +321,7 @@ The add/edit user and new user defaults views will need to reflect the additiona
 
 [Seq API](https://github.com/datalust/seq-api) will need to be updated with the new permission and role.
 
-
-## `seqcli` ch
+## `seqcli` Changes
 
 [Seq CLI](https://github.com/datalust/seqcli) will need to be updated with the new permission and role. Possible just a documentation change. 
 
