@@ -289,7 +289,7 @@ Changes are highlighted.
 
 ## Breaking Changes
 
-None.
+The API will no longer allow creation of API keys with the `Setup` permission. Instead it will respond with a message indicating that the `Setup` permission is no longer valid. 
 
 ## Migration
 
@@ -305,7 +305,7 @@ API keys with the `Setup` permission will gain the `Project` and `System` permis
 
 To be impacted by this change an installation mostly needs to opt-in by allocating some users to the new `Project Owner` role. Existing `Administrators` will get the new `Project` permission and so will not notice a change. 
 
-API keys are created, via the UI and API, with a subset of the set of permissions. Thus any existing processes that created API keys with the `Setup` permission should be granted the `Project` and `System` permissions to preserve existing behaviour. This is valid because `Setup` is equal to `Project` + `System`.
+API keys are created, via the UI and API, with a subset of the set of permissions. Thus any existing processes that create API keys with the `Setup` permission will fail with a helpful error message (see Breaking Changes). 
 
 ## UI Changes
 
@@ -332,8 +332,6 @@ NA.
 # Drawbacks & Limitations
 
 1. Keeping Seq instances running requires migrating all existing administrators to the `Project` + `System` permissions, potentially giving them more access than they need. To get the benefit of the new role and new permissions administrators will need to reallocate user roles and API key permissions. 
-
-1. The `Project` permission allows creating and configuring Seq app instances (if a user with `System` permission has installed the app) so that `Project Owner`s can configure app functionality. Because apps are not constrained this means that `Project Owner`s can do things that affect the system, such as IO. 
 
 # Alternatives
 
