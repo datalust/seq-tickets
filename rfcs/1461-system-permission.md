@@ -295,11 +295,11 @@ The API will no longer allow creation of API keys with the `Setup` permission. I
 
 ### Users
 
-Administrators will continue to be administrators. The Administrator role will gain the `Project` and `System` permissions and lose the `Setup` permission.
+Administrators will continue to be administrators. The Administrator role will gain the `Project` and `System` permissions.
 
 ### API Keys
 
-API keys with the `Setup` permission will gain the `Project` and `System` permissions and lose the `Setup` permission.
+API keys with the `Setup` permission will gain the `Project` and `System` permissions.
 
 ## Backwards Compatibility
 
@@ -331,7 +331,7 @@ NA.
 
 # Drawbacks & Limitations
 
-1. Keeping Seq instances running requires migrating all existing administrators to the `Project` + `System` permissions, potentially giving them more access than they need. To get the benefit of the new role and new permissions administrators will need to reallocate user roles and API key permissions. 
+1. Keeping Seq instances running requires migrating all existing administrators to the `Project` + `System` permissions, potentially giving them more access than they need. To get the benefit of the new role and new permissions administrators will need to reallocate user roles and API key permissions. This limitation does not apply to new Seq installations.
 
 # Alternatives
 
