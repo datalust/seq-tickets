@@ -148,7 +148,7 @@ Changes are highlighted.
 | `api/events/{id}`  | `GET`  | `Read`  |  |  |
 | `api/events/raw/`  | `POST`  | `Public`  | If the `RequireApiKeyForWritingEvents` setting is enabled, requests must be authenticated and have the `Ingest` permission. |  |
 | `api/events/resources`  | `GET`  | `Public`  |  |  |
-| `api/events/signal`  | `DELETE`  | `Project`  |  |  |
+| `api/events/signal`  | `DELETE`  | _**`Project`**_  |  |  |
 | `api/events/signal`  | `GET`  | `Read`  |  |  |
 | `api/events/signal`  | `POST`  | `Read`  |  |  |
 | `api/events/signal/{signalId}`  | `GET`  | `Read`  |  | **Obsolete**  |
