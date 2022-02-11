@@ -4,17 +4,17 @@ Assign values to names that can be referenced in Seq searches and queries.
 
 ## Motivation
 
-Every time I go hunting a bug - one that isn't immediately obvious thanks to some blaring exception, error message, or stack trace - my desk ends up covered in scribbled notes, and my browser window filled with open tags.
+Every time I go hunting a bug - one that isn't immediately obvious thanks to some blaring exception, error message, or stack trace - my desk ends up covered in scribbled notes, and my browser window filled with open tabs.
 
-Seq should help organize more of this information, and bear a bit more of the cognitive load. Debugging production issues is difficult and stressful enough, at times, so the more Seq can do to help, the better.
+Seq should help organize more of this information, and bear a bit more of the cognitive load. Debugging production issues is difficult and stressful enough, and the more Seq can do to help, the better.
 
-On the client-side, when I'm poking at an issue in a web page, I often assign little snippets of information to variables in the developer tools console, or by clicking an element of interest and assigning its DOM node to a variable that I can poke at in JavaScript.
+When I'm poking at an issue in a web page, I often assign little snippets of information to variables in the browser's developer tools console, or by clicking an element of interest and assigning its DOM node to a variable that I can poke at in JavaScript.
 
-On the server-side, life would be made easier if Seq could offer a similar experience:
+Life would be made easier if Seq could offer a similar experience for server-side application debugging:
 
  * Save the id of an interesting HTTP request to e.g. `$suspiciousRequestId`, and then easily return to searching for `RequestId = $suspiciousRequestId`
  * Save a fragment of text like a problematic machine name to e.g. `$slowServer`, and then refer to it multiple times within a query `select count(*) from stream where contains(@Message, $slowServer) or contains(@Exception, $slowServer)`
- * Assign a large/complex property value to a variable, e.g. `$failingRequestBody`, and then interactively examine elements of it with `select $failingRequestBody.items[?].tag = 'legacy'`
+ * Assign a large/complex property value to a variable, e.g. `$failingRequestBody`, and then interactively examine elements of it, for example `select $failingRequestBody.items[0].description`
 
 A new _Variables_ tool window can list current variable names and their values, avoiding at least some of the scribbling, copying, pasting, and double-handling that I'd otherwise need to do.
 
@@ -63,7 +63,14 @@ Variables in the tool window will provide a context menu with _Copy name_, _Copy
 Variables can be set in the Seq search box using `select into`:
 
 ```sql
-select ToIsoString(now()) into $rightNow
+select 'Brisbane' into $city
+```
+
+Values can be computed using all of Seq's usual operators and functions:
+
+
+```sql
+select OffsetIn('Australia/Brisbane', now()) into $offset
 ```
 
 The `into` clause can only appear in scalar queries (initially, only those without a `from stream` clause), and only when there is exactly one column in the `select` clause column list.
