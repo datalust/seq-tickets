@@ -4,7 +4,7 @@ Welcome to the hub for issues, design discussions and the feature roadmap for [S
 
 ### What is Seq?
 
-Seq is a log server designed to speed up diagnostics in complex, asynchronous and distrubuted applications.
+Seq is a log server designed to speed up diagnostics in complex, asynchronous and distributed applications.
 
 It has a strong focus on _structured logging_, the idea that log events should carry important information in first-class properties, and deep support for [message templates](https://messagetemplates.org), a human-friendly, machine-readable syntax for capturing and rendering structured log events.
 
