@@ -8,9 +8,12 @@ Seq is a log server designed to speed up diagnostics in complex, asynchronous an
 
 It has a strong focus on _structured logging_, the idea that log events should carry important information in first-class properties, and deep support for [message templates](https://messagetemplates.org), a human-friendly, machine-readable syntax for capturing and rendering structured log events.
 
+
 ### Bugs
 
-If you think you may have found a bug in Seq, this is the place to report it. You can **[search existing issues](https://github.com/datalust/seq-tickets/issues)** or **[raise a new issue](https://github.com/datalust/seq-tickets/issues/new)** here.
+To report a **security-relevant bug**, please email `security@datalust.co` and do not raise an issue here. We diligently triage, fix, and disclose via CVE all vulnerabilities that are reported or internally discovered.
+
+If you think you may have found a non-security relevant bug in Seq, this is the place to report it. You can **[search existing issues](https://github.com/datalust/seq-tickets/issues)** or **[raise a new issue](https://github.com/datalust/seq-tickets/issues/new)** here.
 
 ### Feature requests
 
